@@ -22,7 +22,7 @@ buttonRef.addEventListener('click', onChangeColor);
 
 function onChangeColor() {
   spanRef.textContent = getRandomHexColor();
-  bodyRef.style.backgroundColor = getRandomHexColor();
+  bodyRef.style.backgroundColor = spanRef.textContent;
 }
 
 function getRandomHexColor() {

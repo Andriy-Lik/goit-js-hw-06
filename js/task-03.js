@@ -41,11 +41,17 @@ const images = [
 // galleryListEl.append(...elements);
 
 
+// const galleryListEl = document.querySelector('.gallery');
+// images.forEach(image => {
+//   const galleryImgElSrc = image.url;
+//   const galleryImgElAlt = image.alt;
+//   galleryListEl.insertAdjacentHTML('beforeend', `<li class="gallery-item"><img class="gallery-img" src="${galleryImgElSrc}" alt="${galleryImgElAlt}" width=370></li>`);
+// });
 
 const galleryListEl = document.querySelector('.gallery');
-images.forEach(image => {
-  const galleryImgElSrc = image.url;
-  const galleryImgElAlt = image.alt;
-  galleryListEl.insertAdjacentHTML('beforeend', `<li class="gallery-item"><img class="gallery-img" src="${galleryImgElSrc}" alt="${galleryImgElAlt}" width=370></li>`);
-});
 
+let markup = images
+.map((image) => `<li class="gallery-item"><img class="gallery-img" src="${image.url}" alt="${image.alt}" width=370></li>`)
+.join("");
+
+galleryListEl.insertAdjacentHTML('beforeend', markup);
